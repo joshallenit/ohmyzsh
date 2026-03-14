@@ -35,8 +35,8 @@ reset_theme_vars() {
 }
 
 () {
-  reset_theme_vars
   local description="given pending=1 with bold prefix, when git_prompt_info is called, then ref is wrapped with stale styling"
+  reset_theme_vars
   autoload -Uz is-at-least
 
   ZSH_THEME_GIT_PROMPT_PREFIX="%B("
@@ -63,8 +63,8 @@ reset_theme_vars() {
 }
 
 () {
+  local description="git_prompt_info - when pending=1 with non-bold prefix - then no stale styling is applied"
   reset_theme_vars
-  local description="given pending=1 with non-bold prefix, when git_prompt_info is called, then no stale styling is applied"
   autoload -Uz is-at-least
 
   ZSH_THEME_GIT_PROMPT_PREFIX="("
@@ -87,8 +87,8 @@ reset_theme_vars() {
 }
 
 () {
+  local description="git_prompt_info - when pending=0 - then formatted output is returned as-is"
   reset_theme_vars
-  local description="given pending=0, when git_prompt_info is called, then formatted output is returned as-is"
   autoload -Uz is-at-least
 
   ZSH_THEME_GIT_PROMPT_PREFIX="%B("
@@ -110,9 +110,9 @@ reset_theme_vars() {
   run_test "$description" "$actual" "%B(main *)%b"
 }
 
-() {
+() 
+  local description="git_prompt_info - when pending=1 with custom stale vars - then ref uses custom stale prefix/suffix"{
   reset_theme_vars
-  local description="given pending=1 with custom stale vars, when git_prompt_info is called, then ref uses custom stale prefix/suffix"
   autoload -Uz is-at-least
 
   ZSH_THEME_GIT_PROMPT_PREFIX="("
@@ -136,8 +136,8 @@ reset_theme_vars() {
 }
 
 () {
+  local description="git_prompt_info - when old single-line format (no ref line) - then output is passed through as-is"
   reset_theme_vars
-  local description="given old single-line format (no ref line), when git_prompt_info is called, then output is passed through as-is"
   autoload -Uz is-at-least
 
   ZSH_THEME_GIT_PROMPT_PREFIX="%B("
