@@ -20,6 +20,7 @@ you would make is not already covered.
   - [Getting started](#getting-started)
   - [You have a solution](#you-have-a-solution)
   - [You have an addition](#you-have-an-addition)
+  - [Running tests](#running-tests)
 - [A note on AI-assisted contributions](#a-note-on-ai-assisted-contributions)
 - [Use the Search, Luke](#use-the-search-luke)
 - [Commit Guidelines](#commit-guidelines)
@@ -104,6 +105,17 @@ If not, then go ahead and submit a PR. Please copy to anyone relevant (e.g. plug
 maintainers) by mentioning their GitHub handle (starting with `@`) in your message.
 
 For any extensive change, such as a new plugin, you will have to find testers to +1 your PR.
+
+### Running tests
+
+To run unit tests locally:
+
+```sh
+# Run all tests
+for file in ./lib/tests/*.test.zsh; do zsh "$file" || return 1; done
+```
+
+Tests are also run automatically in CI.
 
 ### New plugin aliases
 
