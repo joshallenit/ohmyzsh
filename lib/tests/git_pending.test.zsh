@@ -35,7 +35,7 @@ reset_theme_vars() {
 }
 
 () {
-  local description="given pending=1 with bold prefix, when git_prompt_info is called, then ref is wrapped with stale styling"
+  local description="git_prompt_info - when pending=1 with bold prefix - then ref is wrapped with stale styling"
   reset_theme_vars
   autoload -Uz is-at-least
 
